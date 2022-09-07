@@ -48,6 +48,47 @@
     display: inline-block;
 } 
 
-.history {
-    
+.searchBox {
+    margin: 20px;
+
+}
+
+
+#weather {
+    background-image: linear-gradient(to right, rgb(76, 126, 243), rgb(32, 16, 91));
+    border: 3px solid #000;
+    color: white;
+    padding: 10px;
+    margin: 50px 50px 50px 300px;
+    display: none;
+    width: 50%;
+   }
+
+.custom-jumbotron {
+    background-image: linear-gradient(to right, rgb(76, 126, 243), rgb(32, 16, 91));
+    font-family: sans-serif;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 50px;
+    height: 100px;
+}
+
+.fiveDayContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#cityWeather {
+    display: none;
+}
+
+.fiveDayCards {
+    background-image:  linear-gradient(to right, rgb(76, 126, 243), rgb(32, 16, 91));
+    color: #fff;
+    flex: 1;
+    width: 20%;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 7px;
 }

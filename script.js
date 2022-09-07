@@ -18,6 +18,13 @@ init();
 // Api call
 function getWeather(city) {
 
+    $("#weather").css({
+        "display": "block"
+    });
+    $("#cityWeather").css({
+        "display": "block"
+    });
+
     let latLon = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
     fetch(latLon)
         .then(function (response) {
