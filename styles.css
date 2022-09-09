@@ -19,7 +19,7 @@
 }
 
 .high {
-    background-color: red;
+    background-color: red;     
     color: black;
     width: 50px;
     text-align: center;
@@ -62,6 +62,7 @@
     margin: 50px 50px 50px 300px;
     display: none;
     width: 50%;
+    z-index: 1;
    }
 
 .custom-jumbotron {

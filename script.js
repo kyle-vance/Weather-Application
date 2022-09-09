@@ -17,13 +17,14 @@ init();
 
 // Api call
 function getWeather(city) {
-
     $("#weather").css({
         "display": "block"
     });
     $("#cityWeather").css({
         "display": "block"
     });
+    $("#uv").removeClass("low","moderate", "high", "very-high", "extreme");
+    
 
     let latLon = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=1&appid=' + apiKey;
     fetch(latLon)
@@ -75,15 +76,20 @@ function getWeather(city) {
 
                     // Sets current UV index and assigns a class
                     let currentUV = data.current.uvi;
+                    $("#uv").removeClass("low");
+                    $("#uv").removeClass("moderate");
+                    $("#uv").removeClass("high");
+                    $("#uv").removeClass("very-high");
+                    $("#uv").removeClass("extreme");
                     $("#uv").html("UV Index: " + currentUV);
-
-                    if (currentUV <= 2) {
+                                        
+                    if (currentUV <= 2.99) {
                         $("#uv").addClass("low");
-                    } else if (currentUV >= 3 && currentUV <= 5) {
+                    } else if (currentUV >= 3 && currentUV <= 5.99) {
                         $("#uv").addClass("moderate");
-                    } else if (currentUV >= 6 && currentUV <= 7) {
+                    } else if (currentUV >= 6 && currentUV <= 7.99) {
                         $("#uv").addClass("high");
-                    } else if (currentUV >= 8 && currentUV <= 10) {
+                    } else if (currentUV >= 8 && currentUV <= 10.99) {
                         $("#uv").addClass("very-high");
                     } else {
                         $("#uv").addClass("extreme");
